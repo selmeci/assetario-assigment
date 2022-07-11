@@ -1,5 +1,7 @@
 Tento repozitar obsahuje vypracovane zadanie uvedene nizsie:
 
+----------------------------------------------------------------------------------------------------
+
 # Engineering - Assignment
 
 You will be processing, transforming, storing, transforming (again), and displaying some data.
@@ -33,15 +35,16 @@ Next you will need to transform data into a tree format (State > County > City)
 
 Feel free to use any tools, frameworks or libraries. Whatever you are most comfortable with or something new that you wanted to try. Just let me know what you chose, why, and what was your previous experience with it.
 
+--------------------------------------------------------------------------------------------
 # Riesenie
 
 Riesenie je realizovane v programovacom jazyku Rust a ako databaza sa vyuzila NoSQL AWS DynamoDB.
 
 Vysledne riesenie pozostava z dvoch samostatnych programov:
-1. programu ktory po spusteni stiahne stiahne archiv so vstupnymi udajmi, vykona ich extrakciu, nahranie do DB a naslednu transformaicu.
-2. vystaveneho GQL api prostrednictvom AWS sluzbie AppSync a Lambda.
+1. program ktory po spusteni stiahne archiv so vstupnymi udajmi, vykona ich extrakciu, nahranie do DB a naslednu transformaciu.
+2. vystaveneho GQL API prostrednictvom AWS sluzby AppSync a Lambda.
 
-Riesenie je popisane prostrednictom terraformu a je si ho tak mozne nasadit vo vlastnom prostredi pomocou
+Riesenie je popisane prostrednictom Terraformu a je si ho tak mozne nasadit vo vlastnom prostredi (AWS) pomocou
 ```shell
 cd infrastructure
 terraform apply -auto-approve
