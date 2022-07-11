@@ -48,17 +48,20 @@ impl Transformer {
                     name: state.to_string(),
                     countries: countries
                         .into_iter()
-                        .map(|(country, cities)| Country {
-                            name: country.to_string(),
-                            cities: cities
-                                .into_iter()
-                                .map(|city| City {
-                                    id: city.id,
-                                    name: city.name.to_string(),
-                                    state: city.state.to_string(),
-                                    country: city.county.to_string(),
-                                })
-                                .collect(),
+                        .map(|(country, mut cities)| {
+                            cities.sort_by(|a, b| a.name.cmp(&b.name));
+                            Country {
+                                name: country.to_string(),
+                                cities: cities
+                                    .into_iter()
+                                    .map(|city| City {
+                                        id: city.id,
+                                        name: city.name.to_string(),
+                                        state: city.state.to_string(),
+                                        country: city.county.to_string(),
+                                    })
+                                    .collect(),
+                            }
                         })
                         .collect(),
                 });
