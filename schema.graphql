@@ -1,0 +1,27 @@
+
+schema {
+    query: Query
+}
+
+type Query {
+    tree: [State!]
+    state(state_name: String!): [State!]
+    country(country_name: String!, state_name: String!): [State!]
+}
+
+type State {
+    name: String!
+    countries: [Country!]!
+}
+
+type Country {
+    name: String!
+    cities: [City!]!
+}
+
+type City {
+    id: ID!
+    name: String!
+    state: String!
+    country: String!
+}
