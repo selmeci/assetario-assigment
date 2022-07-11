@@ -41,6 +41,14 @@ Vysledne riesenie pozostava z dvoch samostatnych programov:
 1. programu ktory po spusteni stiahne stiahne archiv so vstupnymi udajmi, vykona ich extrakciu, nahranie do DB a naslednu transformaicu.
 2. vystaveneho GQL api prostrednictvom AWS sluzbie AppSync a Lambda.
 
+Riesenie je popisane prostrednictom terraformu a je si ho tak mozne nasadit vo vlastnom prostredi pomocou
+```shell
+cd infrastructure
+terraform apply -auto-approve
+cd ..
+cargo run --color=always --bin etl --manifest-path ./etl/Cargo.toml
+```
+
 ### 1. ELT
 
 #### Extract
